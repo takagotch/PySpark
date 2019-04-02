@@ -6,6 +6,10 @@ http://spark.apache.org/docs/latest/rdd-programming-guide.html
 data = [1, 2, 3, 4, 5]
 distData = sc.parallelize(data)
 
+conf = SparkConf().setAppName(appName).setMaster(master)
+sc = SparkContext(conf=conf)
+
+distFile = sc.textFile("data.txt")
 
 ```
 
